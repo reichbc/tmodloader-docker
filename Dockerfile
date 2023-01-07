@@ -5,7 +5,6 @@ ARG TERRARIA_VERSION=1449
 
 RUN apk update &&\
     apk add --no-cache --virtual build curl unzip mono
-#    apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing mono
 
 WORKDIR /terraria-server
 
@@ -18,7 +17,6 @@ RUN curl -SLO "https://terraria.org/api/download/pc-dedicated-server/terraria-se
     rm -rf "${TERRARIA_VERSION}" &&\
     rm TerrariaServer.bin.x86 TerrariaServer.exe
 
-# RUN curl -SL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/tModLoader.zip" | tar -xvz &&\
 RUN curl -SL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/tModLoader.zip" &&\
     unzip tModLoader.zip &&\
     rm tModLoader.zip &&\
