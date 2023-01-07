@@ -18,11 +18,10 @@ RUN curl -SLO "https://terraria.org/api/download/pc-dedicated-server/terraria-se
     rm -rf "${TERRARIA_VERSION}" &&\
     rm TerrariaServer.bin.x86_64 TerrariaServer.exe
 
-RUN curl -SL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/tModLoader.zip" &&\
+RUN curl -SLO "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/tModLoader.zip" &&\
     unzip tModLoader.zip &&\
     rm tModLoader.zip &&\
-    rm -r lib tModLoader.bin.x86 tModLoaderServer.bin.x86 &&\
-    chmod u+x tModLoaderServer*
+    find . -type f -iname "*.sh" -exec chmod u+rwx {} \;
 
 FROM frolvlad/alpine-glibc:alpine-3.10
 
