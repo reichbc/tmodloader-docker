@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc:alpine-3.10 as build
+FROM frolvlad/alpine-glibc:alpine-3.17 as build
 
 ARG TMOD_VERSION=2022.09.47.16
 ARG TERRARIA_VERSION=1449
