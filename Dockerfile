@@ -5,7 +5,7 @@ ARG TERRARIA_VERSION=1449
 
 RUN apk update &&\
     apk add --no-cache --virtual build curl unzip &&\
-    apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing mono
+    apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing/x86_64/ mono
 
 WORKDIR /terraria-server
 
